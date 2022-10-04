@@ -31,7 +31,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	if err := http.ListenAndServeTLS("localhost:80", "server.pem", "server.key", nil); err != nil {
+	if err := http.ListenAndServeTLS("0.0.0.0:80", "server.pem", "server.key", nil); err != nil {
 		fmt.Println(err)
 	}
 }
